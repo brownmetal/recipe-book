@@ -8,9 +8,12 @@ import { RecipeItemComponent } from './recipe-item.component';
   directives: [RecipeItemComponent]
 })
 export class RecipeListComponent implements OnInit {
-  recipes: Recipe[]=[];
+  recipes: Recipe[]=[
+    new Recipe('Masala Chai', 'Refreshing Tea', 'http://dassana.cdnrecipes.netdna-cdn.com//wp-content/uploads/2016/06/masala-tea-recipe.jpg', []),
+    new Recipe('Oats Recipe', 'Oats Refresher', 'http://dassana.cdnrecipes.netdna-cdn.com//wp-content/uploads/2016/06/oats-uttapam-recipe.jpg', [])
+ ];
   @Output() recipeSelected=new EventEmitter<Recipe>();
-  recipe=new Recipe('Dummy', 'Dummy', 'https://image.freepik.com/free-icon/crash-testing-dummy-silhouette_318-49965.jpg');
+  
   constructor() { }
   
   ngOnInit() {
